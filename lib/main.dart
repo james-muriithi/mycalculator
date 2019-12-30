@@ -26,12 +26,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Widget _buildButton(){
+  Widget _buildButton(String buttonText){
     return Expanded(
-      child: new MaterialButton(
-        child: new Text('1'),
-        color: Colors.blueGrey,
-        textColor: Colors.white,
+      child: new OutlineButton(
+        padding: EdgeInsets.all(24.0),
+        child: new Text(buttonText),
         onPressed: () {},
       ),
     );
@@ -51,28 +50,44 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Row(
               children: <Widget>[
-                _buildButton(),
-                _buildButton(),
-                _buildButton(),
-                _buildButton()
+                _buildButton('7'),
+                _buildButton('8'),
+                _buildButton('9'),
+                _buildButton('/')
               ],
             ),
 
             Row(
               children: <Widget>[
-                _buildButton(),
-                _buildButton(),
-                _buildButton(),
-                _buildButton()
+                _buildButton('4'),
+                _buildButton('5'),
+                _buildButton('6'),
+                _buildButton('*')
               ],
             ),
 
             Row(
               children: <Widget>[
-                _buildButton(),
-                _buildButton(),
-                _buildButton(),
-                _buildButton()
+                _buildButton('1'),
+                _buildButton('2'),
+                _buildButton('3'),
+                _buildButton('-')
+              ],
+            ),
+
+            Row(
+              children: <Widget>[
+                _buildButton('.'),
+                _buildButton('0'),
+                _buildButton('00'),
+                _buildButton('+')
+              ],
+            ),
+
+            Row(
+              children: <Widget>[
+                _buildButton('Clear'),
+                _buildButton('=')
               ],
             ),
           ],
