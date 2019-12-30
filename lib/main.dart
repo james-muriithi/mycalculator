@@ -26,16 +26,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String output = '0';
+
   Widget _buildButton(String buttonText) {
     return Expanded(
       child: new OutlineButton(
         padding: EdgeInsets.all(24.0),
         child: new Text(
           buttonText,
-          style: TextStyle(
-            fontSize: 22.0,
-            fontWeight: FontWeight.bold
-          ),
+          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
         ),
         onPressed: () {},
       ),
@@ -51,7 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         child: Column(
           children: <Widget>[
-            new Text('0'),
+            Container(
+                alignment: Alignment.centerRight,
+                padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 12.0),
+                child: new Text(
+                  output,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 48.0),
+                )),
             new Expanded(
               child: Divider(),
             ),
