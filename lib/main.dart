@@ -26,15 +26,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Widget _buildButton(String buttonText){
+  Widget _buildButton(String buttonText) {
     return Expanded(
       child: new OutlineButton(
         padding: EdgeInsets.all(24.0),
-        child: new Text(buttonText),
+        child: new Text(
+          buttonText,
+          style: TextStyle(
+            fontSize: 22.0,
+            fontWeight: FontWeight.bold
+          ),
+        ),
         onPressed: () {},
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 _buildButton('/')
               ],
             ),
-
             Row(
               children: <Widget>[
                 _buildButton('4'),
@@ -65,7 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 _buildButton('*')
               ],
             ),
-
             Row(
               children: <Widget>[
                 _buildButton('1'),
@@ -74,7 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 _buildButton('-')
               ],
             ),
-
             Row(
               children: <Widget>[
                 _buildButton('.'),
@@ -83,12 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 _buildButton('+')
               ],
             ),
-
             Row(
-              children: <Widget>[
-                _buildButton('Clear'),
-                _buildButton('=')
-              ],
+              children: <Widget>[_buildButton('Clear'), _buildButton('=')],
             ),
           ],
         ),
