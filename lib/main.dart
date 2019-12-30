@@ -34,55 +34,52 @@ class _MyHomePageState extends State<MyHomePage> {
   String operand = '';
 
   void buttonPressed(String buttonText) {
-    if(buttonText == 'CLEAR'){
+    if (buttonText == 'CLEAR') {
       _output = '0';
       num1 = 0.0;
       num2 = 0.0;
       operand = '';
-    }else if (buttonText == '+' || buttonText == '*' || buttonText == '/' || buttonText == '-') {
+    } else if (buttonText == '+' ||
+        buttonText == '*' ||
+        buttonText == '/' ||
+        buttonText == '-') {
       num1 = double.parse(output);
 
       operand = buttonText;
 
       _output = "0";
-    }else if (buttonText == '.' ) {
-      if(_output.contains(".")){
+    } else if (buttonText == '.') {
+      if (_output.contains(".")) {
         print("Already conatains a decimals");
         Fluttertoast.showToast(
-        msg: "Already conatains a decimals",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER
-    );
+            msg: "Already conatains a decimals",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM);
         return;
-
       } else {
         _output = _output + buttonText;
       }
-    }else if (buttonText == "="){
-
+    } else if (buttonText == "=") {
       num2 = double.parse(output);
 
-      if(operand == "+"){
+      if (operand == "+") {
         _output = (num1 + num2).toString();
       }
-      if(operand == "-"){
+      if (operand == "-") {
         _output = (num1 - num2).toString();
       }
-      if(operand == "*"){
+      if (operand == "*") {
         _output = (num1 * num2).toString();
       }
-      if(operand == "/"){
+      if (operand == "/") {
         _output = (num1 / num2).toString();
       }
 
       num1 = 0.0;
       num2 = 0.0;
       operand = "";
-
     } else {
-
       _output = _output + buttonText;
-
     }
     setState(() {
       output = double.parse(_output).toStringAsFixed(2);
