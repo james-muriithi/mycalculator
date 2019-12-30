@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,6 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
     }else if (buttonText == '.' ) {
       if(_output.contains(".")){
         print("Already conatains a decimals");
+        Fluttertoast.showToast(
+        msg: "Already conatains a decimals",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER
+    );
         return;
 
       } else {
