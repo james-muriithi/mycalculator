@@ -26,6 +26,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Widget _buildButton(){
+    return Expanded(
+      child: new MaterialButton(
+        child: new Text('1'),
+        color: Colors.blueGrey,
+        textColor: Colors.white,
+        onPressed: () {},
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,14 +51,28 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Row(
               children: <Widget>[
-                Expanded(
-                  child: new MaterialButton(
-                    child: new Text('1'),
-                    color: Colors.blueGrey,
-                    textColor: Colors.white,
-                    onPressed: () {},
-                  ),
-                ),
+                _buildButton(),
+                _buildButton(),
+                _buildButton(),
+                _buildButton()
+              ],
+            ),
+
+            Row(
+              children: <Widget>[
+                _buildButton(),
+                _buildButton(),
+                _buildButton(),
+                _buildButton()
+              ],
+            ),
+
+            Row(
+              children: <Widget>[
+                _buildButton(),
+                _buildButton(),
+                _buildButton(),
+                _buildButton()
               ],
             ),
           ],
