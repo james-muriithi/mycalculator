@@ -27,6 +27,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String output = '0';
+  String _output = '0';
+  double num1 = 0.0;
+  double num2 = 0.0;
+  String operand = '';
+
+  void buttonPressed(String buttonText) {
+
+  }
 
   Widget _buildButton(String buttonText) {
     return Expanded(
@@ -36,7 +44,9 @@ class _MyHomePageState extends State<MyHomePage> {
           buttonText,
           style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
         ),
-        onPressed: () {},
+        onPressed: () {
+          buttonPressed(buttonText);
+        },
       ),
     );
   }
@@ -93,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Row(
-              children: <Widget>[_buildButton('Clear'), _buildButton('=')],
+              children: <Widget>[_buildButton('CLEAR'), _buildButton('=')],
             ),
           ],
         ),
